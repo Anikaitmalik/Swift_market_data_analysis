@@ -26,7 +26,7 @@ cursor = connection.cursor()
 
 # to read sql query :
 
-def read_table(query):
+def read_query(query):
     """ reading sql query.Only for select query"""
     """ returns onlu pd.DataFrame"""
 
@@ -36,10 +36,18 @@ def read_table(query):
 
 # to read the table_names and store in a list :
 
-def read_table_names(query1):
+'''def read_table_names(query1):
     table_names = []
     cursor.execute(query1)
     rows = cursor.fetchall()
     for row in rows:
         table_names.append(row)
     return table_names
+    '''
+
+
+if __name__ =="__main__" :
+    query = "show tables"
+    print(query)
+    df = read_query(query = query)
+    print(df)
